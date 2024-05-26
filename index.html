@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Proyecto Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="images/icons/logo.png" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Miltonian+Tattoo&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Tattoo Gram-->
+
+    <!-- header -->
+    <header id="header">
+      <!-- navbar -->
+      <nav>
+        <div class="container">
+          <div class="logo">
+            <a href="#header"><img src="images/icons/logo.png" alt="" /></a>
+          </div>
+          <ul>
+            <li class="nav-li"><a href="#galeria">Galeria</a></li>
+            <li class="nav-li"><a href="#testimonios">Testimonios</a></li>
+            <li class="nav-li"><a href="#precios">Precios</a></li>
+            <li class="nav-li"><a href="#contacto">Contacto</a></li>
+          </ul>
+          <div class="buttons">
+            <div class="search-container">
+              <input type="text" class="search-input" placeholder="Buscar">
+              <button class="search"></button>        
+            </div>
+            <button class="carrito"></button>
+            <button class="login" id="login-nav"></button>
+          </div>
+        </div>
+      </nav>
+      <div id="burger">
+        <button class="burger" onclick="toggleMenu()">
+          &#9776;
+          <!--Burger-->
+        </button>
+        <ul class="menu-burger">
+          <li class="burger-li"><a href="#galeria">Galeria</a></li>
+          <li class="burger-li"><a href="#testimonios">Testimonios</a></li>
+          <li class="burger-li"><a href="#precios">Precios</a></li>
+          <li class="burger-li"><a href="#contacto">Contacto</a></li>
+          <div class="search-container">
+            <input type="text" placeholder="Buscar" id="buscar-burger">      
+          </div>
+          <button class="carrito" id="carrito-burger"></button>
+          <button class="login" id="login-burger"></button>
+
+        </ul>
+      </div>
+      
+      <!--Buscador-->
+      <div id="buscador-modal" class="buscador-modal">
+        <div class="buscador-modal-content">
+        </div>
+      </div>
+
+      <!--Carrito-->
+      <div id="carrito-modal" class="carrito-modal">
+        <div class="carrito-modal-content">
+          <span class="close-carrito">&times;</span>
+          <h4>Carrito de Compra</h4>
+          <div id="carrito-items"></div>
+          <div class="total">
+            <span id="precio-total"></span>
+          </div>
+          <div>
+            <button id="confirmar-btn" class="btn-confirmar">Confirmar</button>
+            <button id="cancelar-btn" class="btn-cancelar">Cancelar</button>
+          </div>
+        </div>
+      </div>
+
+      <!--Registro-->
+      <div id="registro-modal" class="registro-modal">
+        <div class="registro-modal-content">
+          <span class="close-registro">&times;</span>
+          <h4>Registro</h4>
+          <form id="registro-form">
+            <label for="correo">Correo Electrónico:</label>
+            <input
+              type="email"
+              id="correo"
+              name="correo"
+              required
+            /><br /><br />
+            <label for="contraseña">Contraseña:</label>
+            <input
+              type="password"
+              id="contraseña"
+              name="contraseña"
+              required
+            /><br /><br />
+            <input class="btn btn-default" type="submit" value="Registrar" />
+          </form>
+        </div>
+      </div>
+      w
+      <!--Perfil-->
+      <div id="perfil-modal" class="perfil-modal">
+        <div class="perfil-modal-content">
+          <span class="close-perfil">&times;</span>
+          <h4>Perfil de Usuario</h4>
+          <p>Correo Electrónico: <span id="email"></span></p>
+          <p>Contraseña: <span id="password">********</span></p>
+          <p>Fecha de Registro: <span id="fecha-registro"></span></p>
+        </div>
+      </div>
+      <!--banner-->
+      <div class="banner">
+        <div class="container">
+          <h1>Tattoo Gram</h1>
+          <h3>
+            Estudio de Tatuajes Geek<br />
+            Proyecto Web Empresa Dinámica
+          </h3>
+          <div class="contact-form">
+            <button id="show-video" class="btn btn-default">Infórmate</button>
+          </div>
+        </div>
+      </div>
+      <div id="video-modal" class="video-modal">
+        <div class="video-modal-content">
+          <!--icono de cerrar-->
+          <span class="close-video">&times;</span>
+          <video id="local-video" controls>
+            <source src="video/tattooing.mp4" type="video/mp4" />
+            Video no soportado por tu navegador.
+          </video>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="galeria">
+        <div class="space-20"></div>
+        <h2 id="galeria">Galeria</h2>
+        <div class="space-10"></div>
+        <div class="container">
+          <div class="categorias">
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <!--testimonios-->
+      <section class="testimonios">
+        <div class="space-20"></div>
+        <h2 id="testimonios">Testimonios</h2>
+        <div class="space-10"></div>
+        <div class="container">
+          <div class="carousel">
+            <div class="carousel-inner">
+              <div class="testimonio">
+                <img src="images/cliente/jesus.jpg" alt="Jesus" />
+                <div class="testimonio-text">
+                  <p>
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua."
+                  </p>
+                  <h4>Jesus</h4>
+                </div>
+              </div>
+              <div class="testimonio">
+                <img src="images/cliente/javi.jpg" alt="Javi" />
+                <div class="testimonio-text">
+                  <p>
+                    "Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat."
+                  </p>
+                  <h4>Javi</h4>
+                </div>
+              </div>
+              <div class="testimonio">
+                <img src="images/cliente/jesus_nomina.webp" alt="Jesus" />
+                <div class="testimonio-text">
+                  <p>
+                    "Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur."
+                  </p>
+                  <h4>Jesus</h4>
+                </div>
+              </div>
+            </div>
+            <button class="prev">❮</button>
+            <button class="next">❯</button>
+          </div>
+        </div>
+      </section>
+
+      <!--precios-->
+      <section class="precios">
+        <div class="space-20"></div>
+        <div class="precios-header">
+          <h2 id="precios">Precios</h2>
+          <p>
+            Ofrecemos tattoos personalizados. Echa un vistazo a nuestros precios.
+          </p>
+          <div class="space-10"></div>
+        </div>
+        <div class="container">
+          <div class="card" style="background-image: url('images/card/card1.jpg')">
+            <div class="card-header">
+              <h3>Básico</h3>
+            </div>
+            <div class="card-content">
+              <ul>
+                <li>Uso de tinta de calidad estándar</li>
+                <li>Tatuaje de relleno e impresiones</li>
+                <li>Precio: €50 - €100</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card" style="background-image: url('images/card/card2.jpg')">
+            <div class="card-header">
+              <h3>Prémium</h3>
+            </div>
+            <div class="card-content">
+              <ul>
+                <li>Uso de tinta de alta calidad</li>
+                <li>Tatuaje personalizado</li>
+                <li>Consulta previa con el artista</li>
+                <li>Precio: €100 - €300</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card" style="background-image: url('images/card/card3.jpg')">
+            <div class="card-header">
+              <h3>Ultimate</h3>
+            </div>
+            <div class="card-content">
+              <ul>
+                <li>Uso de tinta premium</li>
+                <li>Elige el tamaño que quieras</li>
+                <li>Consultas posteriores con el artista</li>
+                <li>Sesiones de tatuaje adicionales</li>
+                <li>Precio: €300 - €600</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--form-->
+      <section class="form">
+        <div class="space-20"></div>
+        <h2 id="contacto">Contacto</h2>
+        <div class="space-10"></div>
+        <div class="container">
+          <form role="form" class="contact-info">
+            <div class="name">
+              <label for="name">Nombre</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name-contacto"
+                placeholder=""
+                name="name"
+              />
+            </div>
+            <div class="email">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email-contacto"
+                placeholder=""
+                name="email"
+              />
+            </div>
+            <div class="message">
+              <textarea
+                class="form-control"
+                rows="8"
+                id="message"
+                placeholder="Escribe tu mensaje"
+                name="message"
+              ></textarea>
+            </div>
+            <input
+              type="submit"
+              id="enviar-contacto"
+              value="Enviar"
+              class="btn btn-default"
+            />
+          </form>
+          <div class="information">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel nam
+              magnam natus tempora cumque, aliquam deleniti voluptatibus
+              voluptas.
+            </p>
+            <br />
+            <p class="contacto">
+              <i class="calle"></i> Torre de los Guzmanes, La Algaba
+            </p>
+            <p class="contacto"><i class="tlf"></i>+34 000-000-000</p>
+            <p class="contacto">
+              <i class="correo"></i> information@tatoogram.com
+            </p>
+          </div>
+        </div>
+        <div class="space-20"></div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer>
+      <div class="container">
+        <ul class="footer-list">
+          <li>Roberto Luna Milla</li>
+          <li>
+            <a href="https://github.com/apoza89m/tattoogram" target="_blank"
+              ><img src="images/icons/github.png" alt=""
+            /></a>
+          </li>
+          <li>
+            <p>👋</p>
+            <a href="#" onclick="darkMode()">Light/Dark Mode</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script type="text/javascript" src="categorias.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
